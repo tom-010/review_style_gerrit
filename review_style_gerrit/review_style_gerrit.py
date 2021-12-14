@@ -9,7 +9,7 @@ class ReviewStyleGerrit(GerritReviewRobot):
 
     def _do_review(self, review):
         files = ' '.join(self.diff_files)
-        output, stderr, has_error = exec(f'pylama {files} --linters=mccabe,pep257,pep8,pyflakes,pylint,isort')
+        output, stderr, has_error = exec(f'python3 -m pylama {files} --linters=mccabe,pep257,pep8,pyflakes,pylint,isort')
         
         review.message = 'The Style-Checker found some issues'
 

@@ -29,7 +29,6 @@ setup(
     description='Convert the test-coverage-result (saved in `.converage` to gerrit comments) while only including not covered lines in the current diff.',
     long_description=README,
     long_description_content_type="text/markdown",
-    python_requires='>=3',
     entry_points = {
         'console_scripts': [
             'report_not_covered_lines = report_not_covered_lines:main',

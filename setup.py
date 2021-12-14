@@ -7,16 +7,17 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setup(
-    name='report_not_covered_lines',
-    url='https://github.com/tom-010/report_not_covered_lines',
-    version='0.0.1',
+    name='review_style_gerrit',
+    url='https://github.com/tom-010/review_style_gerrit',
+    version='0.0.2',
     author='Thomas Deniffel',
     author_email='tdeniffel@gmail.com',
-    packages=['report_not_covered_lines'], # find_packages(),
+    packages=['review_style_gerrit'], # find_packages(),
     license='Apache2',
     install_requires=[
         'gerrit-review-robot',
-        'not-covered-lines'
+        'pylama[all]',
+        'easy_exec'
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -26,12 +27,12 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7'
     ],
-    description='Convert the test-coverage-result (saved in `.converage` to gerrit comments) while only including not covered lines in the current diff.',
+    description='Executes pylama and reports the result of the lines that are in the current diff to gerrit.',
     long_description=README,
     long_description_content_type="text/markdown",
     entry_points = {
         'console_scripts': [
-            'report_not_covered_lines = report_not_covered_lines:main',
+            'review_style_gerrit = review_style_gerrit:main',
         ] 
     },
 )

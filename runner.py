@@ -1,4 +1,4 @@
-from report_not_covered_lines.report_not_covered_lines import ReportNotCoveredLines
+from review_style_gerrit.review_style_gerrit import ReportNotCoveredLines
 
 if __name__ == '__main__':
     bot = ReportNotCoveredLines()
